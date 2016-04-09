@@ -31,13 +31,56 @@
                             <npmVersion>3.3.12</npmVersion>
                         </configuration>
                     </execution>
+
                     <execution>
-                        <id>npm install</id>
+                        <id>npm run</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
                         <configuration>
                             <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>bower run</id>
+                        <goals>
+                            <goal>bower</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>gulp build</id>
+                        <goals>
+                            <goal>gulp</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <arguments>build</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>jspm install</id>
+                        <goals>
+                            <goal>jspm</goal>
+                        </goals>
+                        <configuration>
+                            <arguments>install</arguments>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>javascript tests</id>
+                        <goals>
+                            <goal>karma</goal>
+                        </goals>
+                        <phase>test</phase>
+                        <configuration>
+                            <karmaConfPath>src/test/javascript/karma.conf.ci.js</karmaConfPath>
                         </configuration>
                     </execution>
                 </executions>
