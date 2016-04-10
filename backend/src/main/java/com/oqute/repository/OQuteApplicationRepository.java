@@ -1,8 +1,8 @@
-package web.oqute.repository;
+package com.oqute.repository;
 
 
 import org.springframework.data.repository.Repository;
-import web.oqute.domain.Person;
+import com.oqute.domain.Person;
 
 /**
  * Created by karuniko on 09.04.16.

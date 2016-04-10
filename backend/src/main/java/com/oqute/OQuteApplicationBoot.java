@@ -1,4 +1,4 @@
-package web.oqute;
+package com.oqute;
 
 /**
  * Created by karuniko on 09.04.16.

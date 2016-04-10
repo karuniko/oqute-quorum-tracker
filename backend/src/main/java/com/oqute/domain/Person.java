@@ -1,4 +1,4 @@
-package web.oqute.domain;
+package com.oqute.domain;
 
 import lombok.Getter;
 import lombok.Setter;

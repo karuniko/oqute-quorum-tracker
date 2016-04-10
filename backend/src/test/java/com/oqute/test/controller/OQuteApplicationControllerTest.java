@@ -1,12 +1,13 @@
-package web.oqute.test.controller;
+package com.oqute.test.controller;
+import com.oqute.OQuteApplicationBoot;
+import com.oqute.controller.OQuteApplicationController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import web.oqute.OQuteApplicationBoot;
-import web.oqute.controller.OQuteApplicationController;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
