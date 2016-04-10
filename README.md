@@ -16,8 +16,6 @@ The following features are included:
     * npm
     * bower
     * gulp
-    * jspm
-    * karma
 
 - Clone this project first `git clone https://github.com/karuniko/oqute-quorum-tracker.git local-folder`
 - `cd local-folder`
