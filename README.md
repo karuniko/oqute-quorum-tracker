@@ -22,7 +22,8 @@ The following features are included:
 - Clone this project first `git clone https://github.com/karuniko/oqute-quorum-tracker.git local-folder`
 - `cd local-folder`
 - Use `mvn clean install` to build it
-- Use `mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run` to run the backend
+- Use `mvn org.apache.tomcat.maven:tomcat7-maven-plugin:2.2:run` to run the separate tomcat instance
+- Use `mvn org.springframework.boot:spring-boot-maven-plugin:1.3.3.RELEASE:run` to run the backend's' tomcat **(go to the backend's folder first)**
 - Use `mvn org.codehaus.cargo:cargo-maven2-plugin:1.3.3:deploy` to deploy frontend locally
 
 **P.S:** During development, it's convenient to have the "npm", "bower", "grunt", "gulp" and "karma" commands available on the command line.
