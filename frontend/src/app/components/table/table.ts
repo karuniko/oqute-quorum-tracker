@@ -131,7 +131,7 @@ export class TableSort<T> implements OnChanges {
                 defineValues(true, false, false, 'ASC');
                 return;
             }
-            var one:PaginationPropertySort = this.page.sort.find(e => e.property === this.property);
+            var one:PaginationPropertySort = this.page.sort.pop();//(e => e.property === this.property);
 
             if (one == null) {
                 defineValues(true, false, false, 'ASC');
