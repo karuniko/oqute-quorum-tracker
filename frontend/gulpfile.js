@@ -9,6 +9,7 @@ var path = require('path');
 var fs = require('fs');
 var mkpath = require('mkpath');
 
+
 var PATHS = {
     src: {
         root: 'src',
@@ -26,7 +27,7 @@ gulp.task('clean', function (done) {
     del(['dist'], done);
 });
 
-var tsProject = tsc.createProject('tsconfig.json', {typescript: require('typescript')});
+var tsProject = tsc.createProject('./tsconfig.json', {typescript: require('typescript')});
 
 gulp.task('ts', function () {
     return gulp.src(PATHS.src.ts)

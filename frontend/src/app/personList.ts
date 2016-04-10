@@ -1,5 +1,6 @@
+/// <reference path="../../node_modules/typescript/lib/lib.d.ts"/>
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {Component,Inject} from 'angular2/core';
+import {Component,Inject, OnInit} from 'angular2/core';
 import {ROUTER_DIRECTIVES,Router} from "angular2/router";
 import * as Rx from "rxjs/Rx";
 import {webServiceEndpoint, defaultItemsCountPerPage} from './constants'
@@ -13,7 +14,7 @@ import {showLoading, hideLoading} from "./common/loader";
     templateUrl: 'app/personList.html',
     directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, tableDirectives]
 })
-export class PersonListComponent implements Table {
+export class PersonListComponent implements Table, OnInit {
 
     personPage:any;
     self:PersonListComponent;

@@ -1,5 +1,5 @@
 import {CORE_DIRECTIVES} from 'angular2/common';
-import {Component, View, OnChanges, EventEmitter, Input} from 'angular2/core';
+import {Component, OnChanges, EventEmitter, Input} from 'angular2/core';
 import {webServiceEndpoint} from '../../constants'
 import {PaginationPage, PaginationPropertySort} from '../../common/pagination'
 import * as Rx from "rxjs/Rx";

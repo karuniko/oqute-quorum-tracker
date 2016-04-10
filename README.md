@@ -2,6 +2,7 @@
 ###### This is an application for supporting cases where possibility of a meeting depends on amount of attendees
 
 The following features are included:
+
 * backend
     * spring-boot `1.3.3`
     * spring-web (embedded tomcat)
@@ -16,7 +17,12 @@ The following features are included:
     * npm
     * bower
     * gulp
+    * karma
 
 - Clone this project first `git clone https://github.com/karuniko/oqute-quorum-tracker.git local-folder`
 - `cd local-folder`
 - Use `mvn clean install` to build it
+- Use `mvn clean install tomcat:run` to run the backend
+
+**P.S:** During development, it's convenient to have the "npm", "bower", "grunt", "gulp" and "karma" commands available on the command line.
+[Here are some useful scripts](https://github.com/eirslett/frontend-maven-plugin/tree/master/frontend-maven-plugin/src/it/example%20project/helper-scripts)

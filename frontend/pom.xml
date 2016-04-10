@@ -34,7 +34,7 @@
                     </execution>
 
                     <execution>
-                        <id>npm run</id>
+                        <id>npm install</id>
                         <goals>
                             <goal>npm</goal>
                         </goals>
