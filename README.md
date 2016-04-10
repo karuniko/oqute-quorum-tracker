@@ -1,5 +1,5 @@
 # Online Quorum Tracker
-###### This is an application for supporting cases where possibility of a meeting depends on amount of attendees
+###### This is an event manager application for supporting cases where possibility of a meeting depends on a number of attendees
 
 The following features are included:
 
