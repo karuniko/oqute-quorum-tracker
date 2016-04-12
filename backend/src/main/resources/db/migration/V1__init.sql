@@ -3,4 +3,4 @@ CREATE TABLE PERSON (
 	name varchar(255) not null,
 );
 
-insert into PERSON (first_name) values ('Dmitry');
+insert into PERSON (name) values ('Dmitry');
