@@ -1,0 +1,6 @@
+#This content should be ignored by git since doesn't belong to sources
+**/target
+**/*.iml
+**/bower_components
+**/dist
+**/typings
