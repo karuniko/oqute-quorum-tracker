@@ -1,7 +1,18 @@
 #This content should be ignored by git since doesn't belong to sources
-**/target
-**/*.iml
-**/bower_components
-**/dist
-**/typings
+/**/target/
+/**/*.iml
+/**/bower_components/
+/**/dist/
+/**/typings/
 .idea/
+/.externalToolBuilders
+/.settings
+/.project
+/**/.externalToolBuilders/
+/**/.settings/
+/**/.target/
+/**/.classpath
+/**/.gitignore
+/**/.project
+/**/*.log
+/**/*.log.*
