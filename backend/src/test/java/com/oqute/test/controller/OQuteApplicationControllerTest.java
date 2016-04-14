@@ -1,17 +1,18 @@
 package com.oqute.test.controller;
-import com.oqute.OQuteApplicationBoot;
+import com.oqute.config.ApplicationConfiguration;
 import com.oqute.controller.OQuteApplicationController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(OQuteApplicationBoot.class)
+@ContextConfiguration(classes = ApplicationConfiguration.class, loader = AnnotationConfigContextLoader.class)
 public class OQuteApplicationControllerTest {
 
     @Autowired
