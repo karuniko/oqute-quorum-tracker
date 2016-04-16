@@ -4,25 +4,29 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
+import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.DependsOn;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.mchange.v1.db.sql.DriverManagerDataSource;
 import com.oqute.jobs.ScheduledJob;
 import com.oqute.jobs.SchedulerTask;
 import com.oqute.jobs.SchedulerTaskImpl;
 
 @Configuration
+@EnableTransactionManagement
 public class SchedulerConfig {
 	
 	private final static String SCHEDULER_GROUP = "OQUTE_JOB_GROUP";
@@ -30,6 +34,9 @@ public class SchedulerConfig {
 	@Autowired
 	@Qualifier("globalAppProperties")
 	private Properties globalAppProperties;
+	
+	@Resource
+	ApplicationContext context;
 	
 	@Value("${quartz.cron.expression}")
 	private String cronExpression;
@@ -43,11 +50,8 @@ public class SchedulerConfig {
 	@Value("${hibernate.connection.password}")
 	private String pass;
 	
-	@Autowired
-	PlatformTransactionManager transactionManager;
-	
-	@Autowired
-	DataSource dataSource;
+	@Value("${hibernate.driver_class}")
+	private String driver;
 	
 	@Bean
 	SchedulerTask schedulerTask() {
@@ -61,7 +65,7 @@ public class SchedulerConfig {
 		factory.setGroup(SCHEDULER_GROUP);
 		factory.setDurability(true);
 		Map<String, Object> tasksMap = new HashMap<>();
-		tasksMap.put(SchedulerTask.class.getName(), schedulerTask());
+		tasksMap.put(SchedulerTask.class.getSimpleName(), schedulerTask());
 		factory.setJobDataAsMap(tasksMap);
 		return factory;
 	}
@@ -74,14 +78,28 @@ public class SchedulerConfig {
 		return cron;
 	}
 	
+	@Bean(destroyMethod = "close")
+	DataSource quartzDataSource() {
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(driver);
+        dataSource.setUrl(jdbcUrl);
+        dataSource.setUsername(user);
+        dataSource.setPassword(pass);
+		return dataSource;
+	}
 	@Bean
-	@DependsOn("transactionManager")
+	PlatformTransactionManager quartzTransactionManager() {
+		PlatformTransactionManager txManager = new DataSourceTransactionManager(quartzDataSource());
+		return txManager;
+	}
+	
+	@Bean
 	SchedulerFactoryBean schedulerFactory(CronTriggerFactoryBean cronTriggerFactory) {
 		SchedulerFactoryBean factory = new SchedulerFactoryBean();
 		factory.setTriggers(cronTriggerFactory.getObject());
 		factory.setQuartzProperties(globalAppProperties);
-		factory.setTransactionManager(transactionManager);
-		factory.setDataSource(dataSource);
+		factory.setTransactionManager(quartzTransactionManager());
+		factory.setDataSource(quartzDataSource());
 		return factory;
 	}
 

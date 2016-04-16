@@ -2,9 +2,8 @@ package com.oqute.jobs;
 
 import org.apache.log4j.Logger;
 import org.quartz.JobExecutionContext;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.oqute.service.OQuteApplicationService;
+import org.quartz.JobExecutionException;
+import org.quartz.SchedulerException;
 
 public class SchedulerTaskImpl implements SchedulerTask {
 	/**
@@ -14,12 +13,9 @@ public class SchedulerTaskImpl implements SchedulerTask {
 
 	private final static Logger logger = Logger.getLogger(SchedulerTaskImpl.class);
 	
-	@Autowired
-	private transient OQuteApplicationService service;
-
 	@Override
-	public void execute(JobExecutionContext context) {
-		logger.info("executing spring service from custom job: " +service.getPerson().getName());
+	public void execute(JobExecutionContext context) throws JobExecutionException, SchedulerException {
+		logger.info("executing spring service from custom job");
 	}
 
 }

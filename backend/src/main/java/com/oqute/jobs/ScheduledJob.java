@@ -2,6 +2,7 @@ package com.oqute.jobs;
 
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
@@ -13,7 +14,12 @@ public class ScheduledJob extends QuartzJobBean {
 
 	@Override
 	protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
-		schedulerTask.execute(context);
+		if (schedulerTask != null)
+			try {
+				schedulerTask.execute(context);
+			} catch (SchedulerException e) {
+				throw new JobExecutionException(e);
+			}
 	}
 	
 	public void setSchedulerTask(SchedulerTask schedulerTask) {
