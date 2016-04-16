@@ -4,7 +4,7 @@
 The following features are included:
 
 * backend
-    * spring-boot `1.3.3`
+	* spring-core 4.2.5.RELEASE
     * spring-web (embedded tomcat)
     * spring-data (hibernate + mysql)
     * flyway
