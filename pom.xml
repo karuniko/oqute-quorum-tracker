@@ -108,6 +108,9 @@
                     <groupId>org.apache.tomcat.maven</groupId>
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>${tomcat7.plugin.version}</version>
+		    <configuration>
+			<warFile>${project.build.directory}/${project.parent.artifactId}.war</warFile>
+		    </configuration>
                 </plugin>
                 <plugin>
                 	<groupId>org.apache.maven.plugins</groupId>
