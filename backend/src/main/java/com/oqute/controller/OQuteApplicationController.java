@@ -14,7 +14,7 @@ public class OQuteApplicationController {
     @Autowired
     OQuteApplicationService service;
 
-    @RequestMapping("/")
+    @RequestMapping("/person")
     public String handle() {
         return service.getPerson().getName();
     }

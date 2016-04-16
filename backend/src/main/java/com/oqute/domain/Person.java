@@ -1,11 +1,12 @@
 package com.oqute.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 /**
  * Created by karuniko on 09.04.16.
@@ -20,12 +21,4 @@ public class Person {
     @Setter
     @Id
     private Long id;
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                '}';
-    }
 }

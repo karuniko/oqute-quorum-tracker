@@ -1,5 +1,5 @@
 package com.oqute.test.controller;
-import com.oqute.config.ApplicationConfiguration;
+import com.oqute.config.WebApplicationConfiguration;
 import com.oqute.controller.OQuteApplicationController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +12,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ApplicationConfiguration.class, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = WebApplicationConfiguration.class, loader = AnnotationConfigContextLoader.class)
 public class OQuteApplicationControllerTest {
 
     @Autowired

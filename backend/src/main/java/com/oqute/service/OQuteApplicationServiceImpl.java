@@ -8,7 +8,7 @@ import com.oqute.repository.OQuteApplicationRepository;
 /**
  * Created by karuniko on 09.04.16.
  */
-@Service("service")
+@Service
 public class OQuteApplicationServiceImpl implements OQuteApplicationService {
 
     @Autowired
