@@ -8,6 +8,7 @@ The following features are included:
     * spring-web (embedded tomcat)
     * spring-data (hibernate + mysql)
     * flyway
+    * quartz-scheduler
     * spring-test (assertj separately)
     * spring-logging
     * spring-security
