@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages={"com.oqute.config"})
+@ComponentScan(basePackages={"com.oqute"})
 public class WebApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override
