@@ -9,4 +9,5 @@ import com.oqute.domain.Person;
  */
 public interface OQuteApplicationRepository extends Repository<Person, Long> {
     public Person getById(Long id);
+    public Person getByName(String name);
 }

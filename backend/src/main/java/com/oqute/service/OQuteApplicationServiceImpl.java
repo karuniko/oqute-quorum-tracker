@@ -15,7 +15,13 @@ public class OQuteApplicationServiceImpl implements OQuteApplicationService {
     private OQuteApplicationRepository oQuteApplicationRepository;
 
     @Override
-    public Person getPerson() {
-        return oQuteApplicationRepository.getById(1L);
+    public Person getPerson(Long id) {
+        return oQuteApplicationRepository.getById(id);
     }
+
+	@Override
+	public Person getAdminPerson(String name) {
+		return oQuteApplicationRepository.getByName(name);
+	}
+    
 }

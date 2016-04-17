@@ -12,5 +12,6 @@ import com.oqute.domain.Person;
 @Service
 @Inheritance
 public interface OQuteApplicationService {
-    Person getPerson();
+    Person getPerson(Long id);
+    Person getAdminPerson(String name);
 }

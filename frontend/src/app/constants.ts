@@ -1,3 +1,3 @@
-export var webServiceEndpoint = 'http://localhost:8080/ng2/api';
+export var webServiceEndpoint = 'http://localhost:8080/quorum-tracker';
 
 export var defaultItemsCountPerPage : number = 10;

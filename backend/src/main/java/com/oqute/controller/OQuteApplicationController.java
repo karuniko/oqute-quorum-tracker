@@ -16,6 +16,6 @@ public class OQuteApplicationController {
 
     @RequestMapping("/person")
     public String handle() {
-        return service.getPerson().getName();
+        return service.getPerson(1L).getName();
     }
 }

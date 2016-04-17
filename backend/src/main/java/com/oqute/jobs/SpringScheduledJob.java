@@ -23,6 +23,6 @@ public class SpringScheduledJob {
 
     @Scheduled(cron="${scheduling.cron}")
     public void doJob(){
-        logger.info("I do something useful every 5 sec. " + service.getPerson().getName());
+        logger.info("I do something useful every 5 sec. " + service.getPerson(1L).getName());
     }
 }

@@ -21,4 +21,7 @@ public class Person {
     @Setter
     @Id
     private Long id;
+    @Getter
+    @Setter
+    private String pass;
 }
