@@ -19,12 +19,12 @@ public class OQuteApplicationController {
     @Autowired
     OQuteApplicationService service;
 
-    @RequestMapping("/unprotected")
-    public String handle() {
-        return service.getPerson(1L).getName();
+    @RequestMapping(value = "/unprotected/{personId}", method = RequestMethod.GET)
+    public String handle(@PathVariable("personId") Long personId) {
+        return service.getPerson(personId).getName();
     }
     
-    @RequestMapping(name = "/protected/{personName}", method = RequestMethod.GET)
+    @RequestMapping(value = "/protected/{personName}", method = RequestMethod.GET)
     public @ResponseBody Person person(@PathVariable("personName") String personName) {
     	return service.getAdminPerson(personName);
     }

@@ -22,7 +22,7 @@ public class OQuteApplicationControllerTest {
 
     @Test
     public void testDefaultSettings() throws Exception {
-        assertThat(oQuteApplicationController.handle()).isEqualTo("Dmitry");
+        assertThat(oQuteApplicationController.handle(1L)).isEqualTo("Dmitry");
     }
 
 }
