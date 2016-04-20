@@ -1,5 +1,7 @@
 package com.oqute.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,12 +22,17 @@ public class OQuteApplicationController {
     OQuteApplicationService service;
 
     @RequestMapping(value = "/unprotected/{personId}", method = RequestMethod.GET)
-    public String handle(@PathVariable("personId") Long personId) {
+    public String getPerson(@PathVariable("personId") Long personId) {
         return service.getPerson(personId).getName();
     }
     
     @RequestMapping(value = "/protected/{personName}", method = RequestMethod.GET)
-    public @ResponseBody Person person(@PathVariable("personName") String personName) {
+    public @ResponseBody Person getPerson(@PathVariable("personName") String personName) {
     	return service.getAdminPerson(personName);
+    }
+    
+    @RequestMapping(value = "/protected/catalog", method = RequestMethod.GET)
+    public @ResponseBody List<Person> getAllPersons() {
+    	return service.getAllPersons();
     }
 }

@@ -5,3 +5,4 @@ CREATE TABLE PERSON (
 );
 
 insert into PERSON (name, pass) values ('dmitry', '123456');
+insert into PERSON (name, pass) values ('alex', '123456');

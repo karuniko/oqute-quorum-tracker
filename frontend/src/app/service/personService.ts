@@ -1,34 +1,30 @@
 import {webServiceEndpoint} from '../constants'
-import {PaginationPage, PaginationPropertySort} from '../common/pagination';
-import * as Rx from "rxjs/Rx";
+import {Person} from "../common/person";
+import {Http, Response} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
+import {Injectable} from 'angular2/core';
+import 'rxjs/Rx';
 
+@Injectable()
 export class PersonService {
 
-    castToPromise($promise:JQueryPromise<any>):Promise<any> {
-        return new Promise(function (resolve, reject) {
-            $promise.then(resolve, reject);
-        });
-    }
-
-    findPersons(page:number, pageSize:number, sort:PaginationPropertySort):Rx.Observable<any> {
-        let params:any = {size: pageSize, page: page};
-        if (sort != null) {
-            params.sort = sort.property + "," + sort.direction;
-        }
-        return <Rx.Observable<PaginationPage<any>>> Rx.Observable.fromPromise(this.castToPromise(
-                $.ajax({dataType: "json", url: webServiceEndpoint + '/person', data: params}))
-        ).publish().refCount();
-    }
-
-    getPerson(id:number):Rx.Observable<any> {
-        return <Rx.Observable<any>> Rx.Observable.fromPromise(this.castToPromise(
-                $.ajax({dataType: "json", url: webServiceEndpoint + `/person/${id}`}))
-        ).publish().refCount();
-    }
-
-    deletePerson(id:number):Rx.Observable<any> {
-        return <Rx.Observable<any>> Rx.Observable.fromPromise(this.castToPromise(
-                $.ajax({method: "DELETE", url: webServiceEndpoint + `/person/${id}`}))
-        ).publish().refCount();
-    }
+	constructor (private http: Http) {}
+	  getPersons (): Observable<Person[]> {
+	    return this.http.get(webServiceEndpoint + "/protected/catalog")
+	                    .map(this.extractData)
+	                    .catch(this.handleError);
+	  }
+	  private extractData(res: Response) {
+	    if (res.status < 200 || res.status >= 300) {
+	      throw new Error('Bad response status: ' + res.status);
+	    }
+	    let body = res.json();
+	    return body || {};
+	  }
+	  private handleError (error: any) {
+	    // In a real world app, we might send the error to remote logging infrastructure
+	    let errMsg = error.message || 'Server error';
+	    console.error(errMsg); // log to console instead
+	    return Observable.throw(errMsg);
+	  }
 }
