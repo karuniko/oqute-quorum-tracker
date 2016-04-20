@@ -72,6 +72,59 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+            	<groupId>org.apache.maven.plugins</groupId>
+            	<artifactId>maven-clean-plugin</artifactId>
+            	<version>${maven.clean.version}</version>
+            	<executions>
+            		<execution>
+            			<goals>
+            				<goal>clean</goal>
+            			</goals>
+            			<phase>clean</phase>
+      					<configuration>
+      						<filesets>
+							 	<fileset>
+							    	<directory>${project.basedir}/bower_components</directory>
+							    	<followSymlinks>false</followSymlinks>
+							    	<useDefaultExcludes>true</useDefaultExcludes>
+							    	<includes>
+							      		<include>**/**</include>
+							      		<include>*</include>
+							    	</includes>
+							  	</fileset>
+							  	<fileset>
+							    	<directory>${project.basedir}/dist</directory>
+							    	<followSymlinks>false</followSymlinks>
+							    	<useDefaultExcludes>true</useDefaultExcludes>
+							    	<includes>
+							      		<include>**/**</include>
+							      		<include>*</include>
+							    	</includes>
+							  	</fileset>
+							  	<fileset>
+							    	<directory>${project.basedir}/node_modules</directory>
+							    	<followSymlinks>false</followSymlinks>
+							    	<useDefaultExcludes>true</useDefaultExcludes>
+							    	<includes>
+							      		<include>**/**</include>
+							      		<include>*</include>
+							    	</includes>
+							  	</fileset>
+							  	<fileset>
+							    	<directory>${project.basedir}/typings</directory>
+							    	<followSymlinks>false</followSymlinks>
+							    	<useDefaultExcludes>true</useDefaultExcludes>
+							    	<includes>
+							      		<include>**/**</include>
+							      		<include>*</include>
+							    	</includes>
+							  	</fileset>
+							</filesets>
+      					</configuration>
+            		</execution>
+            	</executions>
+            </plugin>
         </plugins>
     </build>
 

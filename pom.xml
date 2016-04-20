@@ -31,6 +31,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.version>3.5.1</maven.compiler.version>
         <hibernate.c3p0.version>4.3.11.Final</hibernate.c3p0.version>
+        <maven.clean.version>3.0.0</maven.clean.version>
     </properties>
 
     <dependencyManagement>
