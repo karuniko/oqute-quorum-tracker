@@ -11,7 +11,7 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan(basePackages = {"com.oqute"})
+@ComponentScan(basePackages = {"com.karuniko"})
 @PropertySource(name="applicationProperties", value="classpath:application.properties")
 public class ApplicationConfig {
 	

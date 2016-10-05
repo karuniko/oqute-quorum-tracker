@@ -6,30 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.karuniko.domain.Person;
-import com.karuniko.repository.OQuteApplicationRepository;
+import com.karuniko.repository.BlankApplicationRepository;
 
 /**
  * Created by karuniko on 09.04.16.
  */
 @Service
-public class OQuteApplicationServiceImpl implements OQuteApplicationService {
+public class BlankApplicationServiceImpl implements BlankApplicationService {
 
     @Autowired
-    private OQuteApplicationRepository oQuteApplicationRepository;
+    private BlankApplicationRepository blankApplicationRepository;
 
     @Override
     public Person getPerson(Long id) {
-        return oQuteApplicationRepository.getById(id);
+        return blankApplicationRepository.getById(id);
     }
 
 	@Override
 	public Person getAdminPerson(String name) {
-		return oQuteApplicationRepository.getByName(name);
+		return blankApplicationRepository.getByName(name);
 	}
 
 	@Override
 	public List<Person> getAllPersons() {
-		return oQuteApplicationRepository.findAll();
+		return blankApplicationRepository.findAll();
 	}
     
 }

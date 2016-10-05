@@ -12,7 +12,7 @@ public class AuditAspect {
 	
 	private final static Logger log = Logger.getLogger(AuditAspect.class);
 	
-	@Around("execution (public * com.oqute.controller..*.*(..))")
+	@Around("execution (public * com.karuniko.controller..*.*(..))")
 	public Object audit(ProceedingJoinPoint pjp) throws Throwable {
 		String methodName = pjp.getSignature().getName();
 		log.trace("method " + methodName + " started");

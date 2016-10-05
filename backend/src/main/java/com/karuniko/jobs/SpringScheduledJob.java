@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.karuniko.service.OQuteApplicationService;
+import com.karuniko.service.BlankApplicationService;
 
 /**
  * Stub of repeatable job
@@ -19,7 +19,7 @@ public class SpringScheduledJob {
     private final static Logger logger = Logger.getLogger(SpringScheduledJob.class);
     
     @Autowired
-    OQuteApplicationService service;
+    BlankApplicationService service;
 
     @Scheduled(cron="${scheduling.cron}")
     public void doJob(){

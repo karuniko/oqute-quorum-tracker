@@ -12,7 +12,7 @@ import com.karuniko.domain.Person;
  * Created by karuniko on 09.04.16.
  */
 @Cacheable("entities")
-public interface OQuteApplicationRepository extends Repository<Person, Long> {
+public interface BlankApplicationRepository extends Repository<Person, Long> {
     public Person getById(Long id);
     public Person getByName(String name);
     public List<Person> findAll();
