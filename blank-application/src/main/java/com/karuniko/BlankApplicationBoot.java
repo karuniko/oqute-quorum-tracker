@@ -7,9 +7,9 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import com.karuniko.config.ApplicationConfig;
 import com.karuniko.config.WebApplicationConfiguration;
 
-public class OQuteApplicationBoot extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class BlankApplicationBoot extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-    Logger logger = LoggerFactory.getLogger(OQuteApplicationBoot.class);
+    Logger logger = LoggerFactory.getLogger(BlankApplicationBoot.class);
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
