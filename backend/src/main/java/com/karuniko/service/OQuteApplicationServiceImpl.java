@@ -1,11 +1,12 @@
-package com.oqute.service;
+package com.karuniko.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.oqute.domain.Person;
-import com.oqute.repository.OQuteApplicationRepository;
+
+import com.karuniko.domain.Person;
+import com.karuniko.repository.OQuteApplicationRepository;
 
 /**
  * Created by karuniko on 09.04.16.

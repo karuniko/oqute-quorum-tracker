@@ -1,11 +1,12 @@
-package com.oqute.repository;
+package com.karuniko.repository;
 
 
 import java.util.List;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.repository.Repository;
-import com.oqute.domain.Person;
+
+import com.karuniko.domain.Person;
 
 /**
  * Created by karuniko on 09.04.16.

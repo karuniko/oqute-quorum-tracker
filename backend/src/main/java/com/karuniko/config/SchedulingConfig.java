@@ -1,4 +1,4 @@
-package com.oqute.config;
+package com.karuniko.config;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

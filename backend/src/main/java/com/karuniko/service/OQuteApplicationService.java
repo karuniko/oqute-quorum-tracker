@@ -1,4 +1,4 @@
-package com.oqute.service;
+package com.karuniko.service;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.persistence.Inheritance;
 
 import org.springframework.stereotype.Service;
 
-import com.oqute.domain.Person;
+import com.karuniko.domain.Person;
 
 /**
  * Created by karuniko on 09.04.16.

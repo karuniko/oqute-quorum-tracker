@@ -1,6 +1,7 @@
-package com.oqute.test.controller;
-import com.oqute.config.TestConfig;
-import com.oqute.controller.OQuteApplicationController;
+package com.karuniko.test.controller;
+import com.karuniko.controller.OQuteApplicationController;
+import com.karuniko.test.config.TestConfig;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

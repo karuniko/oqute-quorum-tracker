@@ -1,4 +1,4 @@
-package com.oqute.security;
+package com.karuniko.security;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

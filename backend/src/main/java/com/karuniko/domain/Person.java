@@ -1,4 +1,4 @@
-package com.oqute.domain;
+package com.karuniko.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

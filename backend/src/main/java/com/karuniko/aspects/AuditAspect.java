@@ -1,4 +1,4 @@
-package com.oqute.aspects;
+package com.karuniko.aspects;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;

@@ -1,4 +1,4 @@
-package com.oqute.config;
+package com.karuniko.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

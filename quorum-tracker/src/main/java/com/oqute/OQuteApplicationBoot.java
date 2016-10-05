@@ -1,14 +1,11 @@
 package com.oqute;
 
-/**
- * Created by karuniko on 09.04.16.
- */
-
-import com.oqute.config.ApplicationConfig;
-import com.oqute.config.WebApplicationConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+import com.karuniko.config.ApplicationConfig;
+import com.karuniko.config.WebApplicationConfiguration;
 
 public class OQuteApplicationBoot extends AbstractAnnotationConfigDispatcherServletInitializer {
 

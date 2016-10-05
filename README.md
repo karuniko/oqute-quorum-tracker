@@ -1,5 +1,5 @@
-# Online Quorum Tracker
-###### This is an event manager application for supporting cases where possibility of a meeting depends on a number of attendees
+# Rapid Application Development
+###### This is blank application which includes everything required for rapid development start
 
 The following features are included:
 

@@ -1,4 +1,4 @@
-package com.oqute.controller;
+package com.karuniko.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.oqute.domain.Person;
-import com.oqute.service.OQuteApplicationService;
+import com.karuniko.domain.Person;
+import com.karuniko.service.OQuteApplicationService;
 
 /**
  * Created by karuniko on 09.04.16.

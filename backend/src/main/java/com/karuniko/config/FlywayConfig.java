@@ -1,4 +1,4 @@
-package com.oqute.config;
+package com.karuniko.config;
 
 import javax.sql.DataSource;
 
