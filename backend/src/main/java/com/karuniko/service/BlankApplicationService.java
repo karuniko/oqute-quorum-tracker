@@ -13,7 +13,7 @@ import com.karuniko.domain.Person;
  */
 @Service
 @Inheritance
-public interface OQuteApplicationService {
+public interface BlankApplicationService {
     Person getPerson(Long id);
     Person getAdminPerson(String name);
     List<Person> getAllPersons();

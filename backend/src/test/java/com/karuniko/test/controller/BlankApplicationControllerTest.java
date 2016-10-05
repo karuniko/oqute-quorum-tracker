@@ -1,6 +1,6 @@
 package com.karuniko.test.controller;
-import com.karuniko.controller.OQuteApplicationController;
-import com.karuniko.test.config.TestConfig;
+import com.karuniko.config.TestConfig;
+import com.karuniko.controller.BlankApplicationController;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,14 +16,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestConfig.class, loader = AnnotationConfigWebContextLoader.class)
 @WebAppConfiguration
-public class OQuteApplicationControllerTest {
+public class BlankApplicationControllerTest {
 
     @Autowired
-    private OQuteApplicationController oQuteApplicationController;
+    private BlankApplicationController blankApplicationController;
 
     @Test
     public void testDefaultSettings() throws Exception {
-        assertThat(oQuteApplicationController.getPerson(1L)).isEqualTo("Dmitry");
+        assertThat(blankApplicationController.getPerson(1L)).isEqualTo("dmitry");
     }
 
 }

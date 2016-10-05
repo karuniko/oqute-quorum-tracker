@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.karuniko.domain.Person;
-import com.karuniko.service.OQuteApplicationService;
+import com.karuniko.service.BlankApplicationService;
 
 /**
  * Created by karuniko on 09.04.16.
  */
 @RestController
-public class OQuteApplicationController {
+public class BlankApplicationController {
 
     @Autowired
-    OQuteApplicationService service;
+    BlankApplicationService service;
 
     @RequestMapping(value = "/unprotected/{personId}", method = RequestMethod.GET)
     public String getPerson(@PathVariable("personId") Long personId) {

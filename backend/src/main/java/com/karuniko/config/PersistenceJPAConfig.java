@@ -23,7 +23,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = { "com.oqute.repository" })
+@EnableJpaRepositories(basePackages = { "com.karuniko.repository" })
 @Import(FlywayConfig.class)
 public class PersistenceJPAConfig {
 
@@ -44,8 +44,8 @@ public class PersistenceJPAConfig {
 		LocalContainerEntityManagerFactoryBean entityManagerBean = new LocalContainerEntityManagerFactoryBean();
 		entityManagerBean.setDataSource(dataSource);
 		entityManagerBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-		entityManagerBean.setPersistenceUnitName("oqute.persistence");
-		entityManagerBean.setPackagesToScan("com.oqute.domain");
+		entityManagerBean.setPersistenceUnitName("karuniko.persistence");
+		entityManagerBean.setPackagesToScan("com.karuniko.domain");
 		entityManagerBean.setJpaProperties(globalAppProperties);
 		return entityManagerBean;
 	}

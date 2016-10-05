@@ -7,14 +7,14 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import com.karuniko.service.OQuteApplicationService;
+import com.karuniko.service.BlankApplicationService;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	OQuteApplicationService oQuteApplicationService;
+	BlankApplicationService blankApplicationService;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-	  auth.inMemoryAuthentication().withUser("dmitry").password(oQuteApplicationService.getAdminPerson("dmitry").getPass()).roles("PERSON");
+	  auth.inMemoryAuthentication().withUser("dmitry").password(blankApplicationService.getAdminPerson("dmitry").getPass()).roles("PERSON");
 	}
 
 }

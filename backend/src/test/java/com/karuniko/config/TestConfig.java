@@ -1,11 +1,11 @@
-package com.karuniko.test.config;
+package com.karuniko.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan(basePackages = { "com.oqute" })
+@ComponentScan(basePackages = { "com.karuniko" })
 @PropertySource(name = "applicationProperties", value = "classpath:application.properties")
 public class TestConfig {
 
