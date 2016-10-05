@@ -20,7 +20,7 @@ The following features are included:
     * gulp
     * karma
 
-- Clone this project first `git clone https://github.com/karuniko/oqute-quorum-tracker.git local-folder`
+- Clone this project first `git clone https://github.com/karuniko/rapid-blank-application.git local-folder`
 - `cd local-folder`
 - Use `mvn clean install` to build it
 - Use `mvn tomcat7:run-war` to deploy application to separate tomcat instance and run it there
